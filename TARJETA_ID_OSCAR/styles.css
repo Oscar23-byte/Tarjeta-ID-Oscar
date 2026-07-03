@@ -1,0 +1,114 @@
+/* Reseteo general y tipografía */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f3f4f6; /* Fondo gris claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal en formato HORIZONTAL */
+.card{
+    width: 750px; /* Ancho extendido para diseño horizontal */
+    height: 340px; /* Altura fija para mantener formato de carné */
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: table; /* Reemplaza flexbox para máxima compatibilidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Columna izquierda: Banner azul */
+.card-left-banner {
+    display: table-cell;
+    vertical-align: middle;
+    background: #4285f4; /* Azul vibrante de referencia */
+    width: 220px;
+    text-align: center;
+    position: relative;
+}
+
+/* Foto centrada en el bloque azul con borde blanco */
+.foto{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    object-fit: cover;
+    display: inline-block;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Columna derecha: Contenido e información */
+.card-content {
+    display: table-cell;
+    vertical-align: top;
+    padding: 30px 35px;
+}
+
+h2{
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+/* Estructura para poner los datos al lado de los contactos */
+.info-grid {
+    display: table;
+    width: 100%;
+}
+
+.seccion {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+}
+
+.seccion.contactos {
+    padding-left: 25px;
+    border-left: 1px solid #eaeaea; /* Línea divisoria vertical */
+}
+
+h3{
+    color: #4285f4;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contacto-bloque {
+    margin-bottom: 12px;
+}
+
+p{
+    font-size: 14px;
+    color: #4b5563;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+strong{
+    color: #111111;
+    font-weight: 600;
+}
+
+/* Animación al pasar el mouse */
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
