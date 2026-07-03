@@ -1,114 +1,170 @@
-/* Reseteo general y tipografía */
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background-color: #f3f4f6; /* Fondo gris claro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    background:#f3f4f6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
 }
 
-/* Contenedor principal en formato HORIZONTAL */
+/* =========================
+   TARJETA
+========================= */
+
 .card{
-    width: 750px; /* Ancho extendido para diseño horizontal */
-    height: 340px; /* Altura fija para mantener formato de carné */
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    display: table; /* Reemplaza flexbox para máxima compatibilidad */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width:100%;
+    max-width:750px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+    display:flex;
+    transition:.3s;
 }
 
-/* Columna izquierda: Banner azul */
-.card-left-banner {
-    display: table-cell;
-    vertical-align: middle;
-    background: #4285f4; /* Azul vibrante de referencia */
-    width: 220px;
-    text-align: center;
-    position: relative;
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
 }
 
-/* Foto centrada en el bloque azul con borde blanco */
+/* =========================
+   LADO IZQUIERDO
+========================= */
+
+.card-left-banner{
+    width:220px;
+    background:#4285f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
 .foto{
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 5px solid #ffffff;
-    object-fit: cover;
-    display: inline-block;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #fff;
+    background:#fff;
 }
 
-/* Columna derecha: Contenido e información */
-.card-content {
-    display: table-cell;
-    vertical-align: top;
-    padding: 30px 35px;
+/* =========================
+   CONTENIDO
+========================= */
+
+.card-content{
+    flex:1;
+    padding:30px;
 }
 
 h2{
-    color: #1f2937;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 10px;
+    font-size:26px;
+    color:#222;
+    margin-bottom:25px;
+    border-bottom:2px solid #eee;
+    padding-bottom:10px;
 }
 
-/* Estructura para poner los datos al lado de los contactos */
-.info-grid {
-    display: table;
-    width: 100%;
+.info-grid{
+    display:flex;
+    gap:30px;
 }
 
-.seccion {
-    display: table-cell;
-    width: 50%;
-    vertical-align: top;
+.seccion{
+    flex:1;
 }
 
-.seccion.contactos {
-    padding-left: 25px;
-    border-left: 1px solid #eaeaea; /* Línea divisoria vertical */
+.seccion.contactos{
+    border-left:1px solid #ddd;
+    padding-left:25px;
 }
 
 h3{
-    color: #4285f4;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color:#4285f4;
+    margin-bottom:15px;
+    font-size:16px;
 }
 
-.contacto-bloque {
-    margin-bottom: 12px;
+.contacto-bloque{
+    margin-bottom:18px;
 }
 
 p{
-    font-size: 14px;
-    color: #4b5563;
-    margin: 5px 0;
-    line-height: 1.4;
+    font-size:14px;
+    color:#555;
+    line-height:1.6;
+    margin-bottom:5px;
 }
 
 strong{
-    color: #111111;
-    font-weight: 600;
+    color:#111;
 }
 
-/* Animación al pasar el mouse */
-.card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+    body{
+        padding:15px;
+        align-items:flex-start;
+    }
+
+    .card{
+        flex-direction:column;
+        max-width:420px;
+    }
+
+    .card-left-banner{
+        width:100%;
+        padding:25px;
+    }
+
+    .foto{
+        width:120px;
+        height:120px;
+    }
+
+    .card-content{
+        padding:20px;
+    }
+
+    h2{
+        text-align:center;
+        font-size:22px;
+    }
+
+    .info-grid{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .seccion.contactos{
+        border-left:none;
+        border-top:1px solid #ddd;
+        padding-left:0;
+        padding-top:20px;
+    }
+
+    h3{
+        text-align:center;
+    }
+
+    p{
+        font-size:15px;
+        word-break:break-word;
+    }
 }
